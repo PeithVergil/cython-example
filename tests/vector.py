@@ -29,3 +29,13 @@ class TestVector3(TestCase):
         b = Vector3(4, 5, 6)
 
         self.assertEqual(a.dot(b), 32.0)
+
+    def test_mul(self):
+        a = Vector3(2, 3, 4)
+        b = Vector3(5, 6, 7)
+
+        c = a * b
+
+        self.assertEqual(c.x, -3.0)
+        self.assertEqual(c.y, 6.0)
+        self.assertEqual(c.z, -3.0)
