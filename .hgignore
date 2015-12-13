@@ -2,6 +2,7 @@ syntax:glob
 
 *.pyc
 
+dist/
 build/
 mathix/*.c
 mathix/*.so
