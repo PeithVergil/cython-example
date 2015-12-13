@@ -10,10 +10,12 @@ else:
 
 if use_cython:
     extensions = cythonize([
+        Extension('mathix.matrix', ['mathix/matrix.pyx']),
         Extension('mathix.vector', ['mathix/vector.pyx']),
     ])
 else:
     extensions = [
+        Extension('mathix.matrix', ['mathix/matrix.c']),
         Extension('mathix.vector', ['mathix/vector.c']),
     ]
 
