@@ -4,6 +4,14 @@ cdef class Vector3:
         self.y = y
         self.z = z
 
+    cdef float _cdot(self, Vector3 other):
+        return (self.x * other.x) + \
+               (self.y * other.y) + \
+               (self.z * other.z)
+
+    def dot(self, Vector3 other):
+        return self._cdot(other)
+
     def __add__(Vector3 left, Vector3 right):
         cdef Vector3 result
 

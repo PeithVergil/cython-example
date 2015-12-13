@@ -23,3 +23,9 @@ class TestVector3(TestCase):
         self.assertEqual(result.x, 3)
         self.assertEqual(result.y, 3)
         self.assertEqual(result.z, 3)
+
+    def test_dot(self):
+        a = Vector3(1, 2, 3)
+        b = Vector3(4, 5, 6)
+
+        self.assertEqual(a.dot(b), 32.0)
