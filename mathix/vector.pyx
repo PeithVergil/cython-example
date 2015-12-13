@@ -44,11 +44,28 @@ cdef class Vector3:
                          (self.y * self.y) +
                          (self.z * self.z))
 
+    cdef void _cscale(self, float value):
+        self.x *= value
+        self.y *= value
+        self.z *= value
+
     @property
     def magnitude(self):
+        """
+        Calculate the magnitude.
+        """
         return self._cmag()
 
+    def scale(self, float value):
+        """
+        Multiply by a scalar value.
+        """
+        self._cscale(value)
+
     def dot(self, Vector3 other):
+        """
+        Perform dot product.
+        """
         return self._cdot(other)
 
     def __add__(Vector3 left, Vector3 right):

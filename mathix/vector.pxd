@@ -11,3 +11,5 @@ cdef class Vector3:
     cdef Vector3 _csub(self, Vector3 other)
 
     cdef float _cmag(self)
+
+    cdef void _cscale(self, float value)

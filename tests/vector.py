@@ -40,5 +40,14 @@ class TestVector3(TestCase):
         self.assertEqual(c.y, 6.0)
         self.assertEqual(c.z, -3.0)
 
+    def test_scale(self):
+        vector3 = Vector3(1, 2, 3)
+
+        vector3.scale(3.0)
+
+        self.assertEqual(vector3.x, 3.0)
+        self.assertEqual(vector3.y, 6.0)
+        self.assertEqual(vector3.z, 9.0)
+
     def test_magnitude(self):
         self.assertEqual(Vector3(1, 2, 3).magnitude, 3.7416573867739413)
