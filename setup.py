@@ -1,6 +1,7 @@
 from distutils.core import Extension, setup
 
 try:
+    from Cython.Build import cythonize
     from Cython.Distutils import build_ext
 except ImportError:
     use_cython = False
@@ -9,9 +10,9 @@ else:
 
 
 if use_cython:
-    extensions = [
+    extensions = cythonize([
         Extension('mathix.vector', ['mathix/vector.pyx']),
-    ]
+    ])
 
     cmdclass = {
         'build_ext': build_ext
