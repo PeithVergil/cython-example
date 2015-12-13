@@ -31,6 +31,8 @@ setup(
 
     version='0.1',
 
+    license='MIT',
+
     cmdclass=cmdclass,
 
     packages=[
