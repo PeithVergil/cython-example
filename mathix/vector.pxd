@@ -9,3 +9,5 @@ cdef class Vector3:
 
     cdef Vector3 _cadd(self, Vector3 other)
     cdef Vector3 _csub(self, Vector3 other)
+
+    cdef float _cmag(self)

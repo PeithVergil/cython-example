@@ -1,3 +1,6 @@
+from libc cimport math
+
+
 cdef class Vector3:
     def __cinit__(self, float x, float y, float z):
         self.x = x
@@ -35,6 +38,15 @@ cdef class Vector3:
                          self.z - other.z)
 
         return result
+
+    cdef float _cmag(self):
+        return math.sqrt((self.x * self.x) +
+                         (self.y * self.y) +
+                         (self.z * self.z))
+
+    @property
+    def magnitude(self):
+        return self._cmag()
 
     def dot(self, Vector3 other):
         return self._cdot(other)
