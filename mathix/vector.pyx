@@ -1,6 +1,4 @@
 cdef class Vector3:
-    cdef public float x, y, z
-
     def __cinit__(self, float x, float y, float z):
         self.x = x
         self.y = y
