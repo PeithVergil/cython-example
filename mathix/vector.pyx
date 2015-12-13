@@ -44,6 +44,13 @@ cdef class Vector3:
                          (self.y * self.y) +
                          (self.z * self.z))
 
+    cdef void _cunit(self):
+        cdef float magnitude = self._cmag()
+
+        self.x /= magnitude
+        self.y /= magnitude
+        self.z /= magnitude
+
     cdef void _cscale(self, float value):
         self.x *= value
         self.y *= value
@@ -61,6 +68,12 @@ cdef class Vector3:
         Multiply by a scalar value.
         """
         self._cscale(value)
+
+    def unit(self):
+        """
+        Convert to a unit vector.
+        """
+        self._cunit()
 
     def dot(self, Vector3 other):
         """

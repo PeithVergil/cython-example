@@ -40,6 +40,15 @@ class TestVector3(TestCase):
         self.assertEqual(c.y, 6.0)
         self.assertEqual(c.z, -3.0)
 
+    def test_cunit(self):
+        vector3 = Vector3(1, 2, 3)
+
+        vector3.unit()
+
+        self.assertEqual(vector3.x, 0.26726123690605164)
+        self.assertEqual(vector3.y, 0.5345224738121033)
+        self.assertEqual(vector3.z, 0.8017837405204773)
+
     def test_scale(self):
         vector3 = Vector3(1, 2, 3)
 

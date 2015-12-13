@@ -12,4 +12,6 @@ cdef class Vector3:
 
     cdef float _cmag(self)
 
+    cdef void _cunit(self)
+
     cdef void _cscale(self, float value)
