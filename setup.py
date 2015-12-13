@@ -1,7 +1,5 @@
 from distutils.core import Extension, setup
 
-from Cython.Build import cythonize
-
 try:
     from Cython.Distutils import build_ext
 except ImportError:
@@ -53,5 +51,5 @@ setup(
         'Programming Language :: Python :: 3.5',
     ],
 
-    ext_modules=cythonize(extensions)
+    ext_modules=extensions
 )
