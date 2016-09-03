@@ -1,6 +1,44 @@
 from unittest import TestCase
 
-from mathix import Vector3
+from mathix import Vector2, Vector3
+
+
+class TestVector2(TestCase):
+
+    def test_xy(self):
+        vector = Vector2(1, 2)
+
+        self.assertEqual(vector.x, 1)
+        self.assertEqual(vector.y, 2)
+
+    def test_str(self):
+        vector = Vector2(1, 2)
+
+        self.assertEqual(str(vector), 'Vector2(x=1.0, y=2.0)')
+
+    def test_add(self):
+        result = Vector2(1, 2) + Vector2(3, 4)
+
+        self.assertEqual(result.x, 4)
+        self.assertEqual(result.y, 6)
+
+    def test_sub(self):
+        result = Vector2(3, 4) - Vector2(1, 2)
+
+        self.assertEqual(result.x, 2)
+        self.assertEqual(result.y, 2)
+
+    def test_mul(self):
+        result = Vector2(1, 2) * Vector2(3, 4)
+
+        self.assertEqual(result.x, 3)
+        self.assertEqual(result.y, 8)
+
+    def test_div(self):
+        result = Vector2(8, 8) / Vector2(2, 4)
+
+        self.assertEqual(result.x, 4)
+        self.assertEqual(result.y, 2)
 
 
 class TestVector3(TestCase):
