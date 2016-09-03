@@ -1,6 +1,56 @@
 from libc cimport math
 
 
+cdef class Vector2:
+
+    def __cinit__(self, float x, float y):
+        self.x = x
+        self.y = y
+
+    cdef Vector2 add(self, Vector2 other):
+        return Vector2(self.x + other.x,
+                       self.y + other.y)
+
+    cdef Vector2 sub(self, Vector2 other):
+        return Vector2(self.x - other.x,
+                       self.y - other.y)
+
+    cdef Vector2 mul(self, Vector2 other):
+        return Vector2(self.x * other.x,
+                       self.y * other.y)
+
+    cdef Vector2 div(self, Vector2 other):
+        return Vector2(self.x / other.x,
+                       self.y / other.y)
+
+    def __add__(Vector2 left, Vector2 right):
+        """
+        Perform vector addition.
+        """
+        return left.add(right)
+
+    def __sub__(Vector2 left, Vector2 right):
+        """
+        Perform vector subtraction.
+        """
+        return left.sub(right)
+
+    def __mul__(Vector2 left, Vector2 right):
+        """
+        Perform vector multiplication.
+        """
+        return left.mul(right)
+
+    def __truediv__(Vector2 left, Vector2 right):
+        """
+        Perform vector division.
+        """
+        return left.div(right)
+
+    def __str__(self):
+        return 'Vector2(x={0}, y={1})'.format(self.x, self.y)
+
+
 cdef class Vector3:
     def __cinit__(self, float x, float y, float z):
         self.x = x

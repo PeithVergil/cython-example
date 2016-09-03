@@ -1,3 +1,12 @@
+cdef class Vector2:
+    cdef public float x, y
+
+    cdef Vector2 add(self, Vector2 other)
+    cdef Vector2 sub(self, Vector2 other)
+    cdef Vector2 mul(self, Vector2 other)
+    cdef Vector2 div(self, Vector2 other)
+
+
 cdef class Vector3:
     cdef public float x, y, z
 
