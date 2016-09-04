@@ -12,9 +12,11 @@ cdef class Vector2:
     # Cross product
     cdef float _cross(self, Vector2 other)
     
+    cdef float _angle(self)
     cdef float _length(self)
     cdef float _length2(self)
     
+    cdef void _unit(self)
     cdef void _scale(self, float value)
 
 

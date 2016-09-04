@@ -50,6 +50,11 @@ class TestVector2(TestCase):
 
         self.assertEqual(result, -2)
 
+    def test_angle(self):
+        result = Vector2(1, 2).angle()
+
+        self.assertEqual(result, 1.1071487665176392)
+
     def test_length(self):
         result = Vector2(1, 2).length()
 
@@ -59,6 +64,13 @@ class TestVector2(TestCase):
         result = Vector2(1, 2).length2()
 
         self.assertEqual(result, 5.0)
+
+    def test_unit(self):
+        vector = Vector2(1, 2)
+        vector.unit()
+
+        self.assertEqual(vector.x, 0.4472135901451111)
+        self.assertEqual(vector.y, 0.8944271802902222)
 
     def test_scale(self):
         vector = Vector2(1, 2)
