@@ -6,6 +6,12 @@ cdef class Vector2:
     cdef Vector2 mul(self, Vector2 other)
     cdef Vector2 div(self, Vector2 other)
 
+    # Dot product
+    cdef float _dot(self, Vector2 other)
+    
+    # Cross product
+    cdef float _cross(self, Vector2 other)
+
 
 cdef class Vector3:
     cdef public float x, y, z

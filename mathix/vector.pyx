@@ -23,6 +23,12 @@ cdef class Vector2:
         return Vector2(self.x / other.x,
                        self.y / other.y)
 
+    cdef float _dot(self, Vector2 other):
+        return self.x * other.x + self.y * other.y
+
+    cdef float _cross(self, Vector2 other):
+        return self.x * other.y - self.y * other.x
+
     def __add__(Vector2 left, Vector2 right):
         """
         Perform vector addition.
@@ -46,6 +52,12 @@ cdef class Vector2:
         Perform vector division.
         """
         return left.div(right)
+
+    def dot(self, Vector2 other):
+        return self._dot(other)
+
+    def cross(self, Vector2 other):
+        return self._cross(other)
 
     def __str__(self):
         return 'Vector2(x={0}, y={1})'.format(self.x, self.y)

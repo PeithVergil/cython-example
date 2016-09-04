@@ -40,6 +40,16 @@ class TestVector2(TestCase):
         self.assertEqual(result.x, 4)
         self.assertEqual(result.y, 2)
 
+    def test_dot(self):
+        result = Vector2(1, 2).dot(Vector2(3, 4))
+
+        self.assertEqual(result, 11)
+
+    def test_cross(self):
+        result = Vector2(1, 2).cross(Vector2(3, 4))
+
+        self.assertEqual(result, -2)
+
 
 class TestVector3(TestCase):
 
