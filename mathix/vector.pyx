@@ -78,12 +78,15 @@ cdef class Vector2:
     def cross(self, Vector2 other):
         return self._cross(other)
 
+    @property
     def angle(self):
         return self._angle()
 
+    @property
     def length(self):
         return self._length()
 
+    @property
     def length2(self):
         return self._length2()
 

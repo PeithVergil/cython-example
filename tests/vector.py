@@ -51,17 +51,17 @@ class TestVector2(TestCase):
         self.assertEqual(result, -2)
 
     def test_angle(self):
-        result = Vector2(1, 2).angle()
+        result = Vector2(1, 2).angle
 
         self.assertEqual(result, 1.1071487665176392)
 
     def test_length(self):
-        result = Vector2(1, 2).length()
+        result = Vector2(1, 2).length
 
         self.assertEqual(result, 2.23606797749979)
 
     def test_length2(self):
-        result = Vector2(1, 2).length2()
+        result = Vector2(1, 2).length2
 
         self.assertEqual(result, 5.0)
 
