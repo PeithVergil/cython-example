@@ -29,6 +29,16 @@ cdef class Vector2:
     cdef float _cross(self, Vector2 other):
         return self.x * other.y - self.y * other.x
 
+    cdef float _length(self):
+        return math.sqrt(self.x * self.x + self.y * self.y)
+
+    cdef float _length2(self):
+        return self.x * self.x + self.y * self.y
+
+    cdef void _scale(self, float value):
+        self.x *= value
+        self.y *= value
+
     def __add__(Vector2 left, Vector2 right):
         """
         Perform vector addition.
@@ -58,6 +68,15 @@ cdef class Vector2:
 
     def cross(self, Vector2 other):
         return self._cross(other)
+
+    def length(self):
+        return self._length()
+
+    def length2(self):
+        return self._length2()
+
+    def scale(self, float value):
+        return self._scale(value)
 
     def __str__(self):
         return 'Vector2(x={0}, y={1})'.format(self.x, self.y)

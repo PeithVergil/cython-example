@@ -11,6 +11,11 @@ cdef class Vector2:
     
     # Cross product
     cdef float _cross(self, Vector2 other)
+    
+    cdef float _length(self)
+    cdef float _length2(self)
+    
+    cdef void _scale(self, float value)
 
 
 cdef class Vector3:

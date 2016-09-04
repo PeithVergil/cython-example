@@ -50,6 +50,23 @@ class TestVector2(TestCase):
 
         self.assertEqual(result, -2)
 
+    def test_length(self):
+        result = Vector2(1, 2).length()
+
+        self.assertEqual(result, 2.23606797749979)
+
+    def test_length2(self):
+        result = Vector2(1, 2).length2()
+
+        self.assertEqual(result, 5.0)
+
+    def test_scale(self):
+        vector = Vector2(1, 2)
+        vector.scale(0.5)
+
+        self.assertEqual(vector.x, 0.5)
+        self.assertEqual(vector.y, 1.0)
+
 
 class TestVector3(TestCase):
 
