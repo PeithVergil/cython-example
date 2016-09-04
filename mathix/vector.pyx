@@ -48,6 +48,12 @@ cdef class Vector2:
         self.x *= value
         self.y *= value
 
+    cdef void _rotate(self, float angle):
+        angle = angle * (math.M_PI / 180)
+
+        self.x = (self.x * math.cos(angle)) - (self.y * math.sin(angle))
+        self.y = (self.x * math.sin(angle)) + (self.y * math.cos(angle))
+
     def __add__(Vector2 left, Vector2 right):
         """
         Perform vector addition.
@@ -95,6 +101,9 @@ cdef class Vector2:
 
     def scale(self, float value):
         self._scale(value)
+
+    def rotate(self, float angle):
+        self._rotate(angle)
 
     def __str__(self):
         return 'Vector2(x={0}, y={1})'.format(self.x, self.y)

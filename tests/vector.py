@@ -79,6 +79,13 @@ class TestVector2(TestCase):
         self.assertEqual(vector.x, 0.5)
         self.assertEqual(vector.y, 1.0)
 
+    def test_rotate(self):
+        vector = Vector2(5, 0)
+        vector.rotate(45)
+
+        self.assertEqual(vector.x, 3.535533905029297)
+        self.assertEqual(vector.y, 2.5)
+
 
 class TestVector3(TestCase):
 

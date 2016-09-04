@@ -18,6 +18,7 @@ cdef class Vector2:
     
     cdef void _unit(self)
     cdef void _scale(self, float value)
+    cdef void _rotate(self, float angle)
 
 
 cdef class Vector3:
