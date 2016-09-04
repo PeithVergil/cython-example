@@ -39,6 +39,17 @@ class TestUtils(TestCase):
 
         self.assertTrue(line_circle_intersect(a, b, c))
 
+    def test_line_in(self):
+        """
+        The line is inside the circle.
+        """
+        a = Vector2(200, 85)
+        b = Vector2(200, 128)
+
+        c = Circle(250, 150, 100)
+
+        self.assertTrue(line_circle_intersect(a, b, c))
+
     def test_line_out(self):
         """
         The line does not intersect with the circle.
