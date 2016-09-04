@@ -59,7 +59,7 @@ cdef bint _line_circle_intersect2(Vector2 a,
     """
     cdef Vector2 line_direction, projection_point
 
-    cdef float projection_length
+    cdef float t, dt, projection_length
 
     line_direction = (b - a)
     line_direction.unit()
