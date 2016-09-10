@@ -36,6 +36,12 @@ cdef class Matrix22:
     cdef float _determinant(self):
         return self.m00 * self.m11 - self.m01 * self.m10
 
+    cdef Matrix22 mul(self, Matrix22 other):
+        return Matrix22(self.m00 * other.m00 + self.m01 * other.m10,
+                        self.m00 * other.m01 + self.m01 * other.m11,
+                        self.m10 * other.m00 + self.m11 * other.m10,
+                        self.m10 * other.m01 + self.m11 * other.m11)
+
     cdef Vector2 _transform(self, Vector2 vector):
         return Vector2(self.m00 * vector.x + self.m01 * vector.y,
                        self.m10 * vector.x + self.m11 * vector.y)
@@ -46,6 +52,12 @@ cdef class Matrix22:
 
     def transform(self, Vector2 vector):
         return self._transform(vector)
+
+    def __mul__(Matrix22 left, Matrix22 right):
+        """
+        Perform matrix-matrix multiplication.
+        """
+        return left.mul(right)
 
     def __str__(self):
         return 'Matrix22({}, {}, {}, {})'.format(self.m00, self.m01,
