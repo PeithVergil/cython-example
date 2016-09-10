@@ -1,4 +1,4 @@
-from distutils.core import Extension, setup
+from setuptools import Extension, setup
 
 try:
     from Cython.Build import cythonize
