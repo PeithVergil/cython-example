@@ -1,4 +1,4 @@
-from libc.math cimport cos, sin
+from libc.math cimport cos, sin, M_PI
 
 from .vector cimport Vector2
 
@@ -30,6 +30,8 @@ cdef class Matrix22:
         """
         Create a rotation matrix around the z-axis.
         """
+        angle = angle * (M_PI / 180)
+
         return cls(cos(angle), -sin(angle),
                    sin(angle), cos(angle))
 

@@ -16,6 +16,14 @@ class TestMatrix22(TestCase):
 
         self.assertEqual(str(matrix), results)
 
+    def test_mul(self):
+        a = Matrix22.identity()
+        b = Matrix22.scaling(0.5, 0.5)
+
+        c = a * b
+
+        self.assertEqual((c.m00, c.m01, c.m10, c.m11), (0.5, 0.0, 0.0, 0.5))
+
     def test_identity(self):
         matrix = Matrix22.identity()
 
@@ -33,7 +41,7 @@ class TestMatrix22(TestCase):
         self.assertEqual((vector.x, vector.y), (0.5, 0.5))
 
     def test_rotation(self):
-        matrix = Matrix22.rotation(radians(90))
+        matrix = Matrix22.rotation(90)
 
         vector = matrix.transform(Vector2(1.0, 1.0))
 
