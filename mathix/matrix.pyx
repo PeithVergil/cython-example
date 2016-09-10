@@ -56,6 +56,9 @@ cdef class Matrix22:
     def __mul__(Matrix22 left, Matrix22 right):
         """
         Perform matrix-matrix multiplication.
+
+        |a b| |e f| = |ae+bg af+bh|
+        |c d| |g h|   |ce+dg cf+dh|
         """
         return left.mul(right)
 
