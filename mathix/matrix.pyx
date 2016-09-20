@@ -71,73 +71,85 @@ cdef class Matrix22:
 
 cdef class Matrix33:
 
-    def __cinit__(self, float m00, float m01, float m02,
-                        float m10, float m11, float m12,
-                        float m20, float m21, float m22):
-        self.m00, self.m01, self.m02 = m00, m01, m02
-        self.m10, self.m11, self.m12 = m10, m11, m12
-        self.m20, self.m21, self.m22 = m20, m21, m22
+    def __cinit__(self, float m00=0.0, float m01=0.0, float m02=0.0,
+                        float m10=0.0, float m11=0.0, float m12=0.0,
+                        float m20=0.0, float m21=0.0, float m22=0.0):
+        self.m00 = m00
+        self.m01 = m01
+        self.m02 = m02
+        self.m10 = m10
+        self.m11 = m11
+        self.m12 = m12
+        self.m20 = m20
+        self.m21 = m21
+        self.m22 = m22
 
     @classmethod
-    def identity(cls):
+    def identity(Matrix33 cls):
         """
         Create an identity matrix.
         """
-        return cls(1.0, 0.0, 0.0,
-                   0.0, 1.0, 0.0,
-                   0.0, 0.0, 1.0)
+        cdef Matrix33 m = Matrix33()
+
+        m.m00 = 1.0
+        m.m11 = 1.0
+        m.m22 = 1.0
+
+        return m
 
     @classmethod
-    def scaling(cls, scale_x, scale_y):
+    def scaling(Matrix33 cls, float scale_x, float scale_y):
         """
         Create a scaling matrix.
         """
-        cdef float _sx, _sy
+        cdef Matrix33 m = Matrix33()
 
-        _sx = scale_x
-        _sy = scale_y
+        m.m00 = scale_x
+        m.m11 = scale_y
 
-        return cls(_sx, 0.0, 0.0,
-                   0.0, _sy, 0.0,
-                   0.0, 0.0, 1.0)
+        return m
 
     @classmethod
-    def rotation(cls, angle):
+    def rotation(cls, float angle):
         """
         Create a rotation matrix around the z-axis.
         """
-        cdef float rad, _cs, _sn
+        cdef Matrix33 m = Matrix33()
 
-        rad = angle * (M_PI / 180)
+        cdef float a = angle * (M_PI / 180.0)
 
-        _cs = cos(rad)
-        _sn = sin(rad)
+        cdef float c = cos(a)
+        cdef float s = sin(a)
 
-        return cls(_cs, -_sn, 0.0,
-                   _sn,  _cs, 0.0,
-                   0.0,  0.0, 1.0)
+        m.m00 =  c
+        m.m01 = -s
+        m.m10 =  s
+        m.m11 =  c
+
+        return m
 
     cdef Matrix33 _multiply(self, Matrix33 other):
-        return Matrix33(self.m00 * other.m00 + self.m01 * other.m10 + self.m02 * other.m20,
-                        self.m00 * other.m01 + self.m01 * other.m11 + self.m02 * other.m21,
-                        self.m00 * other.m02 + self.m01 * other.m12 + self.m02 * other.m22,
-                        self.m10 * other.m00 + self.m11 * other.m10 + self.m12 * other.m20,
-                        self.m10 * other.m01 + self.m11 * other.m11 + self.m12 * other.m21,
-                        self.m10 * other.m02 + self.m11 * other.m12 + self.m12 * other.m22,
-                        self.m20 * other.m00 + self.m21 * other.m10 + self.m22 * other.m20,
-                        self.m20 * other.m01 + self.m21 * other.m11 + self.m22 * other.m21,
-                        self.m20 * other.m02 + self.m21 * other.m12 + self.m22 * other.m22)
+        cdef Matrix33 m = Matrix33()
+
+        m.m00 = self.m00 * other.m00 + self.m01 * other.m10 + self.m02 * other.m20
+        m.m01 = self.m00 * other.m01 + self.m01 * other.m11 + self.m02 * other.m21
+        m.m02 = self.m00 * other.m02 + self.m01 * other.m12 + self.m02 * other.m22
+        m.m10 = self.m10 * other.m00 + self.m11 * other.m10 + self.m12 * other.m20
+        m.m11 = self.m10 * other.m01 + self.m11 * other.m11 + self.m12 * other.m21
+        m.m12 = self.m10 * other.m02 + self.m11 * other.m12 + self.m12 * other.m22
+        m.m20 = self.m20 * other.m00 + self.m21 * other.m10 + self.m22 * other.m20
+        m.m21 = self.m20 * other.m01 + self.m21 * other.m11 + self.m22 * other.m21
+        m.m22 = self.m20 * other.m02 + self.m21 * other.m12 + self.m22 * other.m22
+
+        return m
 
     cdef Vector2 _transform(self, Vector2 vector):
-        cdef float x, y, z
+        cdef Vector2 v = Vector2()
 
-        x = vector.x
-        y = vector.y
-        z = 1.0
+        v.x = self.m00 * vector.x + self.m01 * vector.y + self.m02 * 1.0
+        v.y = self.m10 * vector.x + self.m11 * vector.y + self.m12 * 1.0
 
-        return Vector2(self.m00 * x + self.m01 * y + self.m02 * z,
-                       self.m10 * x + self.m11 * y + self.m12 * z,
-                       self.m20 * x + self.m21 * y + self.m22 * z)
+        return v
 
     def transform(self, Vector2 vector):
         return self._transform(vector)
