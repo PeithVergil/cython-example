@@ -16,5 +16,16 @@ cdef class Matrix22:
     cdef Vector2 _transform(self, Vector2 vector)
 
 
+cdef class Matrix33:
+
+    cdef public float m00, m01, m02
+    cdef public float m10, m11, m12
+    cdef public float m20, m21, m22
+
+    cdef Matrix33 _multiply(self, Matrix33 other)
+
+    cdef Vector2 _transform(self, Vector2 vector)
+
+
 cdef class Matrix44:
     cdef public float m[16]
