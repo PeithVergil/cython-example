@@ -3,7 +3,7 @@ from libc cimport math
 
 cdef class Vector2:
 
-    def __cinit__(self, float x, float y, *args, **kwargs):
+    def __cinit__(self, float x=0.0, float y=0.0, *args, **kwargs):
         self.x = x
         self.y = y
 
