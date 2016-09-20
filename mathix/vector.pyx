@@ -1,4 +1,4 @@
-from libc cimport math
+from libc.math cimport atan2, sqrt, cos, sin, M_PI
 
 
 cdef class Vector2:
@@ -8,20 +8,36 @@ cdef class Vector2:
         self.y = y
 
     cdef Vector2 add(self, Vector2 other):
-        return Vector2(self.x + other.x,
-                       self.y + other.y)
+        cdef Vector2 v = Vector2()
+
+        v.x = self.x + other.x
+        v.y = self.y + other.y
+
+        return v
 
     cdef Vector2 sub(self, Vector2 other):
-        return Vector2(self.x - other.x,
-                       self.y - other.y)
+        cdef Vector2 v = Vector2()
+
+        v.x = self.x - other.x
+        v.y = self.y - other.y
+
+        return v
 
     cdef Vector2 mul(self, Vector2 other):
-        return Vector2(self.x * other.x,
-                       self.y * other.y)
+        cdef Vector2 v = Vector2()
+
+        v.x = self.x * other.x
+        v.y = self.y * other.y
+
+        return v
 
     cdef Vector2 div(self, Vector2 other):
-        return Vector2(self.x / other.x,
-                       self.y / other.y)
+        cdef Vector2 v = Vector2()
+
+        v.x = self.x / other.x
+        v.y = self.y / other.y
+
+        return v
 
     cdef float _dot(self, Vector2 other):
         return self.x * other.x + self.y * other.y
@@ -30,10 +46,10 @@ cdef class Vector2:
         return self.x * other.y - self.y * other.x
 
     cdef float _angle(self):
-        return math.atan2(self.y, self.x)
+        return atan2(self.y, self.x)
 
     cdef float _length(self):
-        return math.sqrt(self.x * self.x + self.y * self.y)
+        return sqrt(self.x * self.x + self.y * self.y)
 
     cdef float _length2(self):
         return self.x * self.x + self.y * self.y
@@ -49,10 +65,10 @@ cdef class Vector2:
         self.y *= value
 
     cdef void _rotate(self, float angle):
-        angle = angle * (math.M_PI / 180)
+        angle = angle * (M_PI / 180)
 
-        self.x = (self.x * math.cos(angle)) - (self.y * math.sin(angle))
-        self.y = (self.x * math.sin(angle)) + (self.y * math.cos(angle))
+        self.x = (self.x * cos(angle)) - (self.y * sin(angle))
+        self.y = (self.x * sin(angle)) + (self.y * cos(angle))
 
     def __add__(Vector2 left, Vector2 right):
         """
@@ -148,9 +164,9 @@ cdef class Vector3:
         return result
 
     cdef float _cmag(self):
-        return math.sqrt((self.x * self.x) +
-                         (self.y * self.y) +
-                         (self.z * self.z))
+        return sqrt((self.x * self.x) +
+                    (self.y * self.y) +
+                    (self.z * self.z))
 
     cdef void _cunit(self):
         cdef float magnitude = self._cmag()
