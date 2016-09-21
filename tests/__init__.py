@@ -1,4 +1,4 @@
 from .matrix import *
 from .vector import *
-from .circle import *
+from .shapes import *
 from .utils import *

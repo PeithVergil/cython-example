@@ -12,14 +12,14 @@ if use_cython:
     extensions = cythonize([
         Extension('mathix.matrix', ['mathix/matrix.pyx']),
         Extension('mathix.vector', ['mathix/vector.pyx']),
-        Extension('mathix.circle', ['mathix/circle.pyx']),
+        Extension('mathix.shapes', ['mathix/shapes.pyx']),
         Extension('mathix.utils', ['mathix/utils.pyx']),
     ])
 else:
     extensions = [
         Extension('mathix.matrix', ['mathix/matrix.c']),
         Extension('mathix.vector', ['mathix/vector.c']),
-        Extension('mathix.circle', ['mathix/circle.c']),
+        Extension('mathix.shapes', ['mathix/shapes.c']),
         Extension('mathix.utils', ['mathix/utils.c']),
     ]
 

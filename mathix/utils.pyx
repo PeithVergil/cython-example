@@ -1,6 +1,6 @@
 from libc.math cimport abs, sqrt
 
-from .circle cimport Circle
+from .shapes cimport Circle
 from .vector cimport Vector2
 
 
