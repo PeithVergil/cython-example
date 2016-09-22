@@ -54,3 +54,32 @@ cdef class Circle(Vector2):
 
     def line_intersection(self, Vector2 a, Vector2 b):
         return self.line_intersect(a, b)
+
+
+cdef class Rectangle(Vector2):
+
+    def __cinit__(self, float x, float y, float w, float h):
+        self.w = w
+        self.h = h
+
+    cdef float _t(self):
+        return self.y + self.h
+
+    cdef float _r(self):
+        return self.x + self.w
+
+    @property
+    def t(self):
+        return self._t()
+
+    @property
+    def r(self):
+        return self._r()
+
+    @property
+    def b(self):
+        return self.y
+
+    @property
+    def l(self):
+        return self.x

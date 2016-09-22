@@ -17,3 +17,13 @@ cdef class Circle(Vector2):
     Determine if the given line intersects with the circle.
     """
     cdef bint line_intersect(self, Vector2 a, Vector2 b)
+
+
+cdef class Rectangle(Vector2):
+    """
+    The width and height of the rectangle.
+    """
+    cdef public float w, h
+
+    cdef float _t(self)
+    cdef float _r(self)

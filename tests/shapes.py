@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from mathix import Circle, Vector2
+from mathix import Circle, Rectangle, Vector2
 
 
 class TestCircle(TestCase):
@@ -66,3 +66,22 @@ class TestCircle(TestCase):
         c = Circle(250, 150, 100)
 
         self.assertFalse(c.line_intersection(a, b))
+
+
+class TestRectangle(TestCase):
+
+    def test_xywh(self):
+        rect = Rectangle(1.0, 1.0, 5.0, 5.0)
+
+        self.assertEqual(rect.x, 1.0)
+        self.assertEqual(rect.y, 1.0)
+        self.assertEqual(rect.w, 5.0)
+        self.assertEqual(rect.h, 5.0)
+
+    def test_trbl(self):
+        rect = Rectangle(1.0, 1.0, 5.0, 5.0)
+
+        self.assertEqual(rect.t, 6.0)
+        self.assertEqual(rect.r, 6.0)
+        self.assertEqual(rect.b, 1.0)
+        self.assertEqual(rect.l, 1.0)
