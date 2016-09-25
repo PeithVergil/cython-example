@@ -127,3 +127,17 @@ def line_circle_intersect2(Vector2 a, Vector2 b, Circle c):
     if _line_circle_intersect2(a, b, c, intersect_a, intersect_b):
         return True
     return False
+
+
+cdef bint _rectangle_in_rectangle(Rectangle a, Rectangle b):
+    return a.t <= b.t and \
+           a.b >= b.b and \
+           a.l >= b.l and \
+           a.r <= b.r
+
+
+def rectangle_in_rectangle(Rectangle a, Rectangle b):
+    """
+    Check if rectangle "a" can be contained inside rectangle "b".
+    """
+    return _rectangle_in_rectangle(a, b)

@@ -1,7 +1,8 @@
 from unittest import TestCase
 
-from mathix import Vector2, Circle
-from mathix.utils import line_circle_intersect, line_circle_intersect2
+from mathix import Rectangle, Vector2, Circle
+from mathix.utils import (line_circle_intersect, line_circle_intersect2,
+                          rectangle_in_rectangle)
 
 
 class LineCircleIntersectMixin:
@@ -72,3 +73,18 @@ class TestLineCircleIntersect2(LineCircleIntersectMixin, TestCase):
 
     def check_intersection(self, a, b, c):
         return line_circle_intersect2(a, b, c)
+
+
+class TestRectangleInRectangle(TestCase):
+
+    def test_in(self):
+        a = Rectangle(20, 20, 100, 100)
+        b = Rectangle(10, 10, 400, 300)
+
+        self.assertTrue(rectangle_in_rectangle(a, b))
+
+    def test_out(self):
+        a = Rectangle(10, 10, 100, 100)
+        b = Rectangle(20, 20, 400, 300)
+
+        self.assertFalse(rectangle_in_rectangle(a, b))
