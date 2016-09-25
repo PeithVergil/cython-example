@@ -70,6 +70,11 @@ class TestCircle(TestCase):
 
 class TestRectangle(TestCase):
 
+    def test_str(self):
+        rect = Rectangle(1.0, 1.0, 5.0, 5.0)
+
+        self.assertEqual(str(rect), 'Rectangle(x=1.0, y=1.0, w=5.0, h=5.0)')
+
     def test_xywh(self):
         rect = Rectangle(1.0, 1.0, 5.0, 5.0)
 

@@ -83,3 +83,7 @@ cdef class Rectangle(Vector2):
     @property
     def l(self):
         return self.x
+
+    def __str__(self):
+        return 'Rectangle(x={0}, y={1}, w={2}, h={3})'.format(self.x, self.y,
+                                                              self.w, self.h)
