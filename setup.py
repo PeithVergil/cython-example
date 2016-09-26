@@ -37,6 +37,8 @@ setup(
         'mathix',
     ],
 
+    zip_safe=False,
+
     keywords='useless simple math library',
 
     description='A useless simple math library.',
