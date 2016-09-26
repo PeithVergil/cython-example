@@ -6,6 +6,5 @@ MANIFEST
 
 dist/
 build/
-mathix/*.c
 mathix/*.so
 mathix.egg-info/
