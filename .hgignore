@@ -8,3 +8,4 @@ dist/
 build/
 mathix/*.so
 mathix.egg-info/
+cython_debug/

@@ -13,6 +13,7 @@ if use_cython:
         Extension('mathix.matrix', ['mathix/matrix.pyx']),
         Extension('mathix.vector', ['mathix/vector.pyx']),
         Extension('mathix.shapes', ['mathix/shapes.pyx']),
+        Extension('mathix.qtree', ['mathix/qtree.pyx']),
         Extension('mathix.utils', ['mathix/utils.pyx']),
     ])
 else:
@@ -20,6 +21,7 @@ else:
         Extension('mathix.matrix', ['mathix/matrix.c']),
         Extension('mathix.vector', ['mathix/vector.c']),
         Extension('mathix.shapes', ['mathix/shapes.c']),
+        Extension('mathix.qtree', ['mathix/qtree.c']),
         Extension('mathix.utils', ['mathix/utils.c']),
     ]
 
