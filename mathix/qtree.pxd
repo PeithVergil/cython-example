@@ -31,6 +31,8 @@ cdef class Node:
 
     cdef void _split(self)
 
+    cdef void _clear(self)
+
     cdef bint _insert(self, object obj)
 
     cdef Node _select(self, Rectangle bounds)

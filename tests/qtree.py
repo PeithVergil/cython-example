@@ -1,7 +1,7 @@
 from random import randint
 from unittest import TestCase
 
-from mathix import Node, Rectangle
+from mathix import Node, QTree, Rectangle
 
 
 class DummyObject(object):
@@ -24,6 +24,9 @@ class TestNode(TestCase):
 
     def setUp(self):
         self.node = Node(1, Rectangle(0, 0, 800, 600))
+
+    def tearDown(self):
+        self.node.clear()
 
     def test_str(self):
         node_str = 'Node(level=1, bounds=(0.0, 0.0, 800.0, 600.0))'
@@ -109,6 +112,57 @@ class TestNode(TestCase):
             self.node.insert(DummyObject(name, Rectangle(x, y, 50, 50)))
 
         node = self.node.select(Rectangle(450, 310, 50, 50))
+
+        node_str = 'Node(level=3, bounds=(400.0, 300.0, 200.0, 150.0))'
+
+        self.assertEqual(str(node), node_str)
+
+
+class TestQTree(TestCase):
+
+    def setUp(self):
+        self.qtree = QTree(Rectangle(0, 0, 800, 600))
+
+    def tearDown(self):
+        self.qtree.clear()
+
+    def test_insert_true(self):
+        """
+        Try inserting objects that can fit inside.
+        """
+        objects = [
+            DummyObject('test_insert_true', Rectangle(1, 1, 10, 10)),
+            DummyObject('test_insert_true', Rectangle(10, 10, 50, 50)),
+            DummyObject('test_insert_true', Rectangle(450, 310, 50, 50))
+        ]
+
+        for obj in objects:
+            self.assertTrue(self.qtree.insert(obj))
+
+    def test_insert_false(self):
+        """
+        Try inserting objects that can't fit inside.
+        """
+        objects = [
+            DummyObject('test_insert_false', Rectangle(-50, 100, 50, 50)),
+            DummyObject('test_insert_false', Rectangle(700, 700, 50, 50)),
+            DummyObject('test_insert_false', Rectangle(900, 900, 50, 50)),
+        ]
+
+        for obj in objects:
+            self.assertFalse(self.qtree.insert(obj))
+
+    def test_select(self):
+        objects = [
+            DummyObject('test_select', Rectangle(1, 1, 10, 10)),
+            DummyObject('test_select', Rectangle(10, 10, 50, 50)),
+            DummyObject('test_select', Rectangle(450, 310, 50, 50))
+        ]
+
+        for obj in objects:
+            self.qtree.insert(obj)
+
+        node = self.qtree.select(Rectangle(450, 310, 50, 50))
 
         node_str = 'Node(level=3, bounds=(400.0, 300.0, 200.0, 150.0))'
 

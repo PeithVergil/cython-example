@@ -9,6 +9,19 @@ cdef class Node:
         self.bounds = bounds
         self.objects = []
 
+    cdef void _clear(self):
+        self.objects = []
+
+        # Clear the child nodes.
+        if self.child1 is not None or \
+           self.child2 is not None or \
+           self.child3 is not None or \
+           self.child4 is not None:
+            self.child1._clear()
+            self.child2._clear()
+            self.child3._clear()
+            self.child4._clear()
+
     cdef void _split(self):
         cdef int node_lvl
 
@@ -93,6 +106,12 @@ cdef class Node:
         """
         self._split()
 
+    def clear(self):
+        """
+        Clear the objects recursively.
+        """
+        self._clear()
+
     def insert(self, object obj):
         """
         Insert the object to the child nodes or the parent node.
@@ -143,3 +162,18 @@ cdef class Node:
                         self.bounds.y,
                         self.bounds.w,
                         self.bounds.h)
+
+
+class QTree(object):
+
+    def __init__(self, bounds):
+        self.root = Node(1, bounds)
+
+    def insert(self, obj):
+        return self.root.insert(obj)
+
+    def select(self, bounds):
+        return self.root.select(bounds)
+
+    def clear(self):
+        self.root.clear()
