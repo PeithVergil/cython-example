@@ -2235,12 +2235,13 @@ static PyObject *__pyx_pf_6mathix_5qtree_4Node_6select(struct __pyx_obj_6mathix_
  *         return self._select(bounds)
  * 
  *     def print_tree(self):             # <<<<<<<<<<<<<<
- *         padding = '....' * (self.level - 1)
- * 
+ *         """
+ *         Print the tree for debugging purposes.
  */
 
 /* Python wrapper */
 static PyObject *__pyx_pw_6mathix_5qtree_4Node_9print_tree(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static char __pyx_doc_6mathix_5qtree_4Node_8print_tree[] = "\n        Print the tree for debugging purposes.\n        ";
 static PyObject *__pyx_pw_6mathix_5qtree_4Node_9print_tree(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
@@ -2269,45 +2270,45 @@ static PyObject *__pyx_pf_6mathix_5qtree_4Node_8print_tree(struct __pyx_obj_6mat
   int __pyx_t_9;
   __Pyx_RefNannySetupContext("print_tree", 0);
 
-  /* "mathix/qtree.pyx":106
- * 
- *     def print_tree(self):
+  /* "mathix/qtree.pyx":109
+ *         Print the tree for debugging purposes.
+ *         """
  *         padding = '....' * (self.level - 1)             # <<<<<<<<<<<<<<
  * 
  *         print('')
  */
-  __pyx_t_1 = __Pyx_PyInt_From_long((__pyx_v_self->level - 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 106, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_long((__pyx_v_self->level - 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 109, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PyNumber_Multiply(__pyx_kp_s_, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 106, __pyx_L1_error)
+  __pyx_t_2 = PyNumber_Multiply(__pyx_kp_s_, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 109, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_padding = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "mathix/qtree.pyx":108
+  /* "mathix/qtree.pyx":111
  *         padding = '....' * (self.level - 1)
  * 
  *         print('')             # <<<<<<<<<<<<<<
  *         print('{}{} >> '.format(padding, str(self)))
  * 
  */
-  if (__Pyx_PrintOne(0, __pyx_kp_s__2) < 0) __PYX_ERR(0, 108, __pyx_L1_error)
+  if (__Pyx_PrintOne(0, __pyx_kp_s__2) < 0) __PYX_ERR(0, 111, __pyx_L1_error)
 
-  /* "mathix/qtree.pyx":109
+  /* "mathix/qtree.pyx":112
  * 
  *         print('')
  *         print('{}{} >> '.format(padding, str(self)))             # <<<<<<<<<<<<<<
  * 
  *         padding = '    ' * (self.level - 1)
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s__3, __pyx_n_s_format); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 109, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s__3, __pyx_n_s_format); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 112, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 109, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 112, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_INCREF(((PyObject *)__pyx_v_self));
   __Pyx_GIVEREF(((PyObject *)__pyx_v_self));
   PyTuple_SET_ITEM(__pyx_t_3, 0, ((PyObject *)__pyx_v_self));
-  __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)(&PyString_Type)), __pyx_t_3, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 109, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)(&PyString_Type)), __pyx_t_3, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 112, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
@@ -2322,7 +2323,7 @@ static PyObject *__pyx_pf_6mathix_5qtree_4Node_8print_tree(struct __pyx_obj_6mat
       __pyx_t_5 = 1;
     }
   }
-  __pyx_t_6 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 109, __pyx_L1_error)
+  __pyx_t_6 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 112, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   if (__pyx_t_3) {
     __Pyx_GIVEREF(__pyx_t_3); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_3); __pyx_t_3 = NULL;
@@ -2333,84 +2334,84 @@ static PyObject *__pyx_pf_6mathix_5qtree_4Node_8print_tree(struct __pyx_obj_6mat
   __Pyx_GIVEREF(__pyx_t_4);
   PyTuple_SET_ITEM(__pyx_t_6, 1+__pyx_t_5, __pyx_t_4);
   __pyx_t_4 = 0;
-  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 109, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 112, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (__Pyx_PrintOne(0, __pyx_t_2) < 0) __PYX_ERR(0, 109, __pyx_L1_error)
+  if (__Pyx_PrintOne(0, __pyx_t_2) < 0) __PYX_ERR(0, 112, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "mathix/qtree.pyx":111
+  /* "mathix/qtree.pyx":114
  *         print('{}{} >> '.format(padding, str(self)))
  * 
  *         padding = '    ' * (self.level - 1)             # <<<<<<<<<<<<<<
  * 
  *         objects = [str(o) for o in self.objects]
  */
-  __pyx_t_2 = __Pyx_PyInt_From_long((__pyx_v_self->level - 1)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 111, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyInt_From_long((__pyx_v_self->level - 1)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 114, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = PyNumber_Multiply(__pyx_kp_s__4, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 111, __pyx_L1_error)
+  __pyx_t_1 = PyNumber_Multiply(__pyx_kp_s__4, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 114, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF_SET(__pyx_v_padding, __pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "mathix/qtree.pyx":113
+  /* "mathix/qtree.pyx":116
  *         padding = '    ' * (self.level - 1)
  * 
  *         objects = [str(o) for o in self.objects]             # <<<<<<<<<<<<<<
  * 
  *         print('')
  */
-  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 113, __pyx_L1_error)
+  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 116, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (unlikely(__pyx_v_self->objects == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not iterable");
-    __PYX_ERR(0, 113, __pyx_L1_error)
+    __PYX_ERR(0, 116, __pyx_L1_error)
   }
   __pyx_t_2 = __pyx_v_self->objects; __Pyx_INCREF(__pyx_t_2); __pyx_t_5 = 0;
   for (;;) {
     if (__pyx_t_5 >= PyList_GET_SIZE(__pyx_t_2)) break;
     #if CYTHON_COMPILING_IN_CPYTHON
-    __pyx_t_6 = PyList_GET_ITEM(__pyx_t_2, __pyx_t_5); __Pyx_INCREF(__pyx_t_6); __pyx_t_5++; if (unlikely(0 < 0)) __PYX_ERR(0, 113, __pyx_L1_error)
+    __pyx_t_6 = PyList_GET_ITEM(__pyx_t_2, __pyx_t_5); __Pyx_INCREF(__pyx_t_6); __pyx_t_5++; if (unlikely(0 < 0)) __PYX_ERR(0, 116, __pyx_L1_error)
     #else
-    __pyx_t_6 = PySequence_ITEM(__pyx_t_2, __pyx_t_5); __pyx_t_5++; if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 113, __pyx_L1_error)
+    __pyx_t_6 = PySequence_ITEM(__pyx_t_2, __pyx_t_5); __pyx_t_5++; if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 116, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     #endif
     __Pyx_XDECREF_SET(__pyx_v_o, __pyx_t_6);
     __pyx_t_6 = 0;
-    __pyx_t_6 = PyTuple_New(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 113, __pyx_L1_error)
+    __pyx_t_6 = PyTuple_New(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 116, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_INCREF(__pyx_v_o);
     __Pyx_GIVEREF(__pyx_v_o);
     PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_v_o);
-    __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)(&PyString_Type)), __pyx_t_6, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 113, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)(&PyString_Type)), __pyx_t_6, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 116, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_4))) __PYX_ERR(0, 113, __pyx_L1_error)
+    if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_4))) __PYX_ERR(0, 116, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_objects = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "mathix/qtree.pyx":115
+  /* "mathix/qtree.pyx":118
  *         objects = [str(o) for o in self.objects]
  * 
  *         print('')             # <<<<<<<<<<<<<<
  *         print('{}     objects: {} '.format(padding, objects))
  *         print('{}      child1: {} '.format(padding, str(self.child1)))
  */
-  if (__Pyx_PrintOne(0, __pyx_kp_s__2) < 0) __PYX_ERR(0, 115, __pyx_L1_error)
+  if (__Pyx_PrintOne(0, __pyx_kp_s__2) < 0) __PYX_ERR(0, 118, __pyx_L1_error)
 
-  /* "mathix/qtree.pyx":116
+  /* "mathix/qtree.pyx":119
  * 
  *         print('')
  *         print('{}     objects: {} '.format(padding, objects))             # <<<<<<<<<<<<<<
  *         print('{}      child1: {} '.format(padding, str(self.child1)))
  *         print('{}      child2: {} '.format(padding, str(self.child2)))
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s_objects, __pyx_n_s_format); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 116, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s_objects, __pyx_n_s_format); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 119, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_4 = NULL;
   __pyx_t_5 = 0;
@@ -2424,7 +2425,7 @@ static PyObject *__pyx_pf_6mathix_5qtree_4Node_8print_tree(struct __pyx_obj_6mat
       __pyx_t_5 = 1;
     }
   }
-  __pyx_t_6 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 116, __pyx_L1_error)
+  __pyx_t_6 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 119, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   if (__pyx_t_4) {
     __Pyx_GIVEREF(__pyx_t_4); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_4); __pyx_t_4 = NULL;
@@ -2435,28 +2436,28 @@ static PyObject *__pyx_pf_6mathix_5qtree_4Node_8print_tree(struct __pyx_obj_6mat
   __Pyx_INCREF(__pyx_v_objects);
   __Pyx_GIVEREF(__pyx_v_objects);
   PyTuple_SET_ITEM(__pyx_t_6, 1+__pyx_t_5, __pyx_v_objects);
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_6, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 116, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_6, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 119, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (__Pyx_PrintOne(0, __pyx_t_1) < 0) __PYX_ERR(0, 116, __pyx_L1_error)
+  if (__Pyx_PrintOne(0, __pyx_t_1) < 0) __PYX_ERR(0, 119, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "mathix/qtree.pyx":117
+  /* "mathix/qtree.pyx":120
  *         print('')
  *         print('{}     objects: {} '.format(padding, objects))
  *         print('{}      child1: {} '.format(padding, str(self.child1)))             # <<<<<<<<<<<<<<
  *         print('{}      child2: {} '.format(padding, str(self.child2)))
  *         print('{}      child3: {} '.format(padding, str(self.child3)))
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s_child1, __pyx_n_s_format); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 117, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s_child1, __pyx_n_s_format); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 120, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_6 = PyTuple_New(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 117, __pyx_L1_error)
+  __pyx_t_6 = PyTuple_New(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 120, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_INCREF(((PyObject *)__pyx_v_self->child1));
   __Pyx_GIVEREF(((PyObject *)__pyx_v_self->child1));
   PyTuple_SET_ITEM(__pyx_t_6, 0, ((PyObject *)__pyx_v_self->child1));
-  __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)(&PyString_Type)), __pyx_t_6, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 117, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)(&PyString_Type)), __pyx_t_6, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 120, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __pyx_t_6 = NULL;
@@ -2471,7 +2472,7 @@ static PyObject *__pyx_pf_6mathix_5qtree_4Node_8print_tree(struct __pyx_obj_6mat
       __pyx_t_5 = 1;
     }
   }
-  __pyx_t_3 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 117, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 120, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__pyx_t_6) {
     __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_6); __pyx_t_6 = NULL;
@@ -2482,28 +2483,28 @@ static PyObject *__pyx_pf_6mathix_5qtree_4Node_8print_tree(struct __pyx_obj_6mat
   __Pyx_GIVEREF(__pyx_t_4);
   PyTuple_SET_ITEM(__pyx_t_3, 1+__pyx_t_5, __pyx_t_4);
   __pyx_t_4 = 0;
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_3, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 117, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_3, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 120, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (__Pyx_PrintOne(0, __pyx_t_1) < 0) __PYX_ERR(0, 117, __pyx_L1_error)
+  if (__Pyx_PrintOne(0, __pyx_t_1) < 0) __PYX_ERR(0, 120, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "mathix/qtree.pyx":118
+  /* "mathix/qtree.pyx":121
  *         print('{}     objects: {} '.format(padding, objects))
  *         print('{}      child1: {} '.format(padding, str(self.child1)))
  *         print('{}      child2: {} '.format(padding, str(self.child2)))             # <<<<<<<<<<<<<<
  *         print('{}      child3: {} '.format(padding, str(self.child3)))
  *         print('{}      child4: {} '.format(padding, str(self.child4)))
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s_child2, __pyx_n_s_format); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 118, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s_child2, __pyx_n_s_format); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 121, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 118, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 121, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_INCREF(((PyObject *)__pyx_v_self->child2));
   __Pyx_GIVEREF(((PyObject *)__pyx_v_self->child2));
   PyTuple_SET_ITEM(__pyx_t_3, 0, ((PyObject *)__pyx_v_self->child2));
-  __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)(&PyString_Type)), __pyx_t_3, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 118, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)(&PyString_Type)), __pyx_t_3, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 121, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
@@ -2518,7 +2519,7 @@ static PyObject *__pyx_pf_6mathix_5qtree_4Node_8print_tree(struct __pyx_obj_6mat
       __pyx_t_5 = 1;
     }
   }
-  __pyx_t_6 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 118, __pyx_L1_error)
+  __pyx_t_6 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 121, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   if (__pyx_t_3) {
     __Pyx_GIVEREF(__pyx_t_3); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_3); __pyx_t_3 = NULL;
@@ -2529,28 +2530,28 @@ static PyObject *__pyx_pf_6mathix_5qtree_4Node_8print_tree(struct __pyx_obj_6mat
   __Pyx_GIVEREF(__pyx_t_4);
   PyTuple_SET_ITEM(__pyx_t_6, 1+__pyx_t_5, __pyx_t_4);
   __pyx_t_4 = 0;
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_6, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 118, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_6, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 121, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (__Pyx_PrintOne(0, __pyx_t_1) < 0) __PYX_ERR(0, 118, __pyx_L1_error)
+  if (__Pyx_PrintOne(0, __pyx_t_1) < 0) __PYX_ERR(0, 121, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "mathix/qtree.pyx":119
+  /* "mathix/qtree.pyx":122
  *         print('{}      child1: {} '.format(padding, str(self.child1)))
  *         print('{}      child2: {} '.format(padding, str(self.child2)))
  *         print('{}      child3: {} '.format(padding, str(self.child3)))             # <<<<<<<<<<<<<<
  *         print('{}      child4: {} '.format(padding, str(self.child4)))
  * 
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s_child3, __pyx_n_s_format); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 119, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s_child3, __pyx_n_s_format); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 122, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_6 = PyTuple_New(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 119, __pyx_L1_error)
+  __pyx_t_6 = PyTuple_New(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 122, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_INCREF(((PyObject *)__pyx_v_self->child3));
   __Pyx_GIVEREF(((PyObject *)__pyx_v_self->child3));
   PyTuple_SET_ITEM(__pyx_t_6, 0, ((PyObject *)__pyx_v_self->child3));
-  __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)(&PyString_Type)), __pyx_t_6, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 119, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)(&PyString_Type)), __pyx_t_6, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 122, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __pyx_t_6 = NULL;
@@ -2565,7 +2566,7 @@ static PyObject *__pyx_pf_6mathix_5qtree_4Node_8print_tree(struct __pyx_obj_6mat
       __pyx_t_5 = 1;
     }
   }
-  __pyx_t_3 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 119, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 122, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__pyx_t_6) {
     __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_6); __pyx_t_6 = NULL;
@@ -2576,28 +2577,28 @@ static PyObject *__pyx_pf_6mathix_5qtree_4Node_8print_tree(struct __pyx_obj_6mat
   __Pyx_GIVEREF(__pyx_t_4);
   PyTuple_SET_ITEM(__pyx_t_3, 1+__pyx_t_5, __pyx_t_4);
   __pyx_t_4 = 0;
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_3, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 119, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_3, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 122, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (__Pyx_PrintOne(0, __pyx_t_1) < 0) __PYX_ERR(0, 119, __pyx_L1_error)
+  if (__Pyx_PrintOne(0, __pyx_t_1) < 0) __PYX_ERR(0, 122, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "mathix/qtree.pyx":120
+  /* "mathix/qtree.pyx":123
  *         print('{}      child2: {} '.format(padding, str(self.child2)))
  *         print('{}      child3: {} '.format(padding, str(self.child3)))
  *         print('{}      child4: {} '.format(padding, str(self.child4)))             # <<<<<<<<<<<<<<
  * 
  *         # Check if there are child nodes.
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s_child4, __pyx_n_s_format); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 120, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s_child4, __pyx_n_s_format); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 123, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 120, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 123, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_INCREF(((PyObject *)__pyx_v_self->child4));
   __Pyx_GIVEREF(((PyObject *)__pyx_v_self->child4));
   PyTuple_SET_ITEM(__pyx_t_3, 0, ((PyObject *)__pyx_v_self->child4));
-  __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)(&PyString_Type)), __pyx_t_3, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 120, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)(&PyString_Type)), __pyx_t_3, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 123, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
@@ -2612,7 +2613,7 @@ static PyObject *__pyx_pf_6mathix_5qtree_4Node_8print_tree(struct __pyx_obj_6mat
       __pyx_t_5 = 1;
     }
   }
-  __pyx_t_6 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 120, __pyx_L1_error)
+  __pyx_t_6 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 123, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   if (__pyx_t_3) {
     __Pyx_GIVEREF(__pyx_t_3); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_3); __pyx_t_3 = NULL;
@@ -2623,14 +2624,14 @@ static PyObject *__pyx_pf_6mathix_5qtree_4Node_8print_tree(struct __pyx_obj_6mat
   __Pyx_GIVEREF(__pyx_t_4);
   PyTuple_SET_ITEM(__pyx_t_6, 1+__pyx_t_5, __pyx_t_4);
   __pyx_t_4 = 0;
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_6, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 120, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_6, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 123, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (__Pyx_PrintOne(0, __pyx_t_1) < 0) __PYX_ERR(0, 120, __pyx_L1_error)
+  if (__Pyx_PrintOne(0, __pyx_t_1) < 0) __PYX_ERR(0, 123, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "mathix/qtree.pyx":123
+  /* "mathix/qtree.pyx":126
  * 
  *         # Check if there are child nodes.
  *         if self.child1 is not None or \             # <<<<<<<<<<<<<<
@@ -2645,7 +2646,7 @@ static PyObject *__pyx_pf_6mathix_5qtree_4Node_8print_tree(struct __pyx_obj_6mat
     goto __pyx_L6_bool_binop_done;
   }
 
-  /* "mathix/qtree.pyx":124
+  /* "mathix/qtree.pyx":127
  *         # Check if there are child nodes.
  *         if self.child1 is not None or \
  *            self.child2 is not None or \             # <<<<<<<<<<<<<<
@@ -2660,7 +2661,7 @@ static PyObject *__pyx_pf_6mathix_5qtree_4Node_8print_tree(struct __pyx_obj_6mat
     goto __pyx_L6_bool_binop_done;
   }
 
-  /* "mathix/qtree.pyx":125
+  /* "mathix/qtree.pyx":128
  *         if self.child1 is not None or \
  *            self.child2 is not None or \
  *            self.child3 is not None or \             # <<<<<<<<<<<<<<
@@ -2675,7 +2676,7 @@ static PyObject *__pyx_pf_6mathix_5qtree_4Node_8print_tree(struct __pyx_obj_6mat
     goto __pyx_L6_bool_binop_done;
   }
 
-  /* "mathix/qtree.pyx":126
+  /* "mathix/qtree.pyx":129
  *            self.child2 is not None or \
  *            self.child3 is not None or \
  *            self.child4 is not None:             # <<<<<<<<<<<<<<
@@ -2687,7 +2688,7 @@ static PyObject *__pyx_pf_6mathix_5qtree_4Node_8print_tree(struct __pyx_obj_6mat
   __pyx_t_7 = __pyx_t_8;
   __pyx_L6_bool_binop_done:;
 
-  /* "mathix/qtree.pyx":123
+  /* "mathix/qtree.pyx":126
  * 
  *         # Check if there are child nodes.
  *         if self.child1 is not None or \             # <<<<<<<<<<<<<<
@@ -2696,101 +2697,14 @@ static PyObject *__pyx_pf_6mathix_5qtree_4Node_8print_tree(struct __pyx_obj_6mat
  */
   if (__pyx_t_7) {
 
-    /* "mathix/qtree.pyx":127
+    /* "mathix/qtree.pyx":130
  *            self.child3 is not None or \
  *            self.child4 is not None:
  *             self.child1.print_tree()             # <<<<<<<<<<<<<<
  *             self.child2.print_tree()
  *             self.child3.print_tree()
  */
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self->child1), __pyx_n_s_print_tree); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 127, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_6 = NULL;
-    if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
-      __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_2);
-      if (likely(__pyx_t_6)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-        __Pyx_INCREF(__pyx_t_6);
-        __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_2, function);
-      }
-    }
-    if (__pyx_t_6) {
-      __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 127, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    } else {
-      __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 127, __pyx_L1_error)
-    }
-    __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-    /* "mathix/qtree.pyx":128
- *            self.child4 is not None:
- *             self.child1.print_tree()
- *             self.child2.print_tree()             # <<<<<<<<<<<<<<
- *             self.child3.print_tree()
- *             self.child4.print_tree()
- */
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self->child2), __pyx_n_s_print_tree); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 128, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_6 = NULL;
-    if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
-      __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_2);
-      if (likely(__pyx_t_6)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-        __Pyx_INCREF(__pyx_t_6);
-        __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_2, function);
-      }
-    }
-    if (__pyx_t_6) {
-      __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 128, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    } else {
-      __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 128, __pyx_L1_error)
-    }
-    __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-    /* "mathix/qtree.pyx":129
- *             self.child1.print_tree()
- *             self.child2.print_tree()
- *             self.child3.print_tree()             # <<<<<<<<<<<<<<
- *             self.child4.print_tree()
- * 
- */
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self->child3), __pyx_n_s_print_tree); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 129, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_6 = NULL;
-    if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
-      __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_2);
-      if (likely(__pyx_t_6)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-        __Pyx_INCREF(__pyx_t_6);
-        __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_2, function);
-      }
-    }
-    if (__pyx_t_6) {
-      __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 129, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    } else {
-      __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 129, __pyx_L1_error)
-    }
-    __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-    /* "mathix/qtree.pyx":130
- *             self.child2.print_tree()
- *             self.child3.print_tree()
- *             self.child4.print_tree()             # <<<<<<<<<<<<<<
- * 
- *     def __str__(self):
- */
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self->child4), __pyx_n_s_print_tree); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 130, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self->child1), __pyx_n_s_print_tree); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 130, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_6 = NULL;
     if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
@@ -2812,7 +2726,94 @@ static PyObject *__pyx_pf_6mathix_5qtree_4Node_8print_tree(struct __pyx_obj_6mat
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "mathix/qtree.pyx":123
+    /* "mathix/qtree.pyx":131
+ *            self.child4 is not None:
+ *             self.child1.print_tree()
+ *             self.child2.print_tree()             # <<<<<<<<<<<<<<
+ *             self.child3.print_tree()
+ *             self.child4.print_tree()
+ */
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self->child2), __pyx_n_s_print_tree); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 131, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __pyx_t_6 = NULL;
+    if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
+      __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_2);
+      if (likely(__pyx_t_6)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+        __Pyx_INCREF(__pyx_t_6);
+        __Pyx_INCREF(function);
+        __Pyx_DECREF_SET(__pyx_t_2, function);
+      }
+    }
+    if (__pyx_t_6) {
+      __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 131, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+    } else {
+      __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 131, __pyx_L1_error)
+    }
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+    /* "mathix/qtree.pyx":132
+ *             self.child1.print_tree()
+ *             self.child2.print_tree()
+ *             self.child3.print_tree()             # <<<<<<<<<<<<<<
+ *             self.child4.print_tree()
+ * 
+ */
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self->child3), __pyx_n_s_print_tree); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 132, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __pyx_t_6 = NULL;
+    if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
+      __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_2);
+      if (likely(__pyx_t_6)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+        __Pyx_INCREF(__pyx_t_6);
+        __Pyx_INCREF(function);
+        __Pyx_DECREF_SET(__pyx_t_2, function);
+      }
+    }
+    if (__pyx_t_6) {
+      __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 132, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+    } else {
+      __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 132, __pyx_L1_error)
+    }
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+    /* "mathix/qtree.pyx":133
+ *             self.child2.print_tree()
+ *             self.child3.print_tree()
+ *             self.child4.print_tree()             # <<<<<<<<<<<<<<
+ * 
+ *     def __str__(self):
+ */
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self->child4), __pyx_n_s_print_tree); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 133, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __pyx_t_6 = NULL;
+    if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
+      __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_2);
+      if (likely(__pyx_t_6)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+        __Pyx_INCREF(__pyx_t_6);
+        __Pyx_INCREF(function);
+        __Pyx_DECREF_SET(__pyx_t_2, function);
+      }
+    }
+    if (__pyx_t_6) {
+      __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 133, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+    } else {
+      __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 133, __pyx_L1_error)
+    }
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+    /* "mathix/qtree.pyx":126
  * 
  *         # Check if there are child nodes.
  *         if self.child1 is not None or \             # <<<<<<<<<<<<<<
@@ -2825,8 +2826,8 @@ static PyObject *__pyx_pf_6mathix_5qtree_4Node_8print_tree(struct __pyx_obj_6mat
  *         return self._select(bounds)
  * 
  *     def print_tree(self):             # <<<<<<<<<<<<<<
- *         padding = '....' * (self.level - 1)
- * 
+ *         """
+ *         Print the tree for debugging purposes.
  */
 
   /* function exit code */
@@ -2849,7 +2850,7 @@ static PyObject *__pyx_pf_6mathix_5qtree_4Node_8print_tree(struct __pyx_obj_6mat
   return __pyx_r;
 }
 
-/* "mathix/qtree.pyx":132
+/* "mathix/qtree.pyx":135
  *             self.child4.print_tree()
  * 
  *     def __str__(self):             # <<<<<<<<<<<<<<
@@ -2886,7 +2887,7 @@ static PyObject *__pyx_pf_6mathix_5qtree_4Node_10__str__(struct __pyx_obj_6mathi
   PyObject *__pyx_t_10 = NULL;
   __Pyx_RefNannySetupContext("__str__", 0);
 
-  /* "mathix/qtree.pyx":133
+  /* "mathix/qtree.pyx":136
  * 
  *     def __str__(self):
  *         s = 'Node(level={}, bounds=({}, {}, {}, {}))'             # <<<<<<<<<<<<<<
@@ -2896,7 +2897,7 @@ static PyObject *__pyx_pf_6mathix_5qtree_4Node_10__str__(struct __pyx_obj_6mathi
   __Pyx_INCREF(__pyx_kp_s_Node_level_bounds);
   __pyx_v_s = __pyx_kp_s_Node_level_bounds;
 
-  /* "mathix/qtree.pyx":135
+  /* "mathix/qtree.pyx":138
  *         s = 'Node(level={}, bounds=({}, {}, {}, {}))'
  * 
  *         return s.format(self.level,             # <<<<<<<<<<<<<<
@@ -2904,46 +2905,46 @@ static PyObject *__pyx_pf_6mathix_5qtree_4Node_10__str__(struct __pyx_obj_6mathi
  *                         self.bounds.y,
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_s, __pyx_n_s_format); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 135, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_s, __pyx_n_s_format); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 138, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_self->level); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 135, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_self->level); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 138, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
 
-  /* "mathix/qtree.pyx":136
+  /* "mathix/qtree.pyx":139
  * 
  *         return s.format(self.level,
  *                         self.bounds.x,             # <<<<<<<<<<<<<<
  *                         self.bounds.y,
  *                         self.bounds.w,
  */
-  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_self->bounds->__pyx_base.x); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 136, __pyx_L1_error)
+  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_self->bounds->__pyx_base.x); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 139, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
 
-  /* "mathix/qtree.pyx":137
+  /* "mathix/qtree.pyx":140
  *         return s.format(self.level,
  *                         self.bounds.x,
  *                         self.bounds.y,             # <<<<<<<<<<<<<<
  *                         self.bounds.w,
  *                         self.bounds.h)
  */
-  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_self->bounds->__pyx_base.y); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 137, __pyx_L1_error)
+  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_self->bounds->__pyx_base.y); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 140, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
 
-  /* "mathix/qtree.pyx":138
+  /* "mathix/qtree.pyx":141
  *                         self.bounds.x,
  *                         self.bounds.y,
  *                         self.bounds.w,             # <<<<<<<<<<<<<<
  *                         self.bounds.h)
  */
-  __pyx_t_6 = PyFloat_FromDouble(__pyx_v_self->bounds->w); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 138, __pyx_L1_error)
+  __pyx_t_6 = PyFloat_FromDouble(__pyx_v_self->bounds->w); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 141, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
 
-  /* "mathix/qtree.pyx":139
+  /* "mathix/qtree.pyx":142
  *                         self.bounds.y,
  *                         self.bounds.w,
  *                         self.bounds.h)             # <<<<<<<<<<<<<<
  */
-  __pyx_t_7 = PyFloat_FromDouble(__pyx_v_self->bounds->h); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 139, __pyx_L1_error)
+  __pyx_t_7 = PyFloat_FromDouble(__pyx_v_self->bounds->h); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 142, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __pyx_t_8 = NULL;
   __pyx_t_9 = 0;
@@ -2957,7 +2958,7 @@ static PyObject *__pyx_pf_6mathix_5qtree_4Node_10__str__(struct __pyx_obj_6mathi
       __pyx_t_9 = 1;
     }
   }
-  __pyx_t_10 = PyTuple_New(5+__pyx_t_9); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 135, __pyx_L1_error)
+  __pyx_t_10 = PyTuple_New(5+__pyx_t_9); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 138, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_10);
   if (__pyx_t_8) {
     __Pyx_GIVEREF(__pyx_t_8); PyTuple_SET_ITEM(__pyx_t_10, 0, __pyx_t_8); __pyx_t_8 = NULL;
@@ -2977,7 +2978,7 @@ static PyObject *__pyx_pf_6mathix_5qtree_4Node_10__str__(struct __pyx_obj_6mathi
   __pyx_t_5 = 0;
   __pyx_t_6 = 0;
   __pyx_t_7 = 0;
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_10, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 135, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_10, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 138, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -2985,7 +2986,7 @@ static PyObject *__pyx_pf_6mathix_5qtree_4Node_10__str__(struct __pyx_obj_6mathi
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "mathix/qtree.pyx":132
+  /* "mathix/qtree.pyx":135
  *             self.child4.print_tree()
  * 
  *     def __str__(self):             # <<<<<<<<<<<<<<
@@ -3904,7 +3905,7 @@ static PyMethodDef __pyx_methods_6mathix_5qtree_Node[] = {
   {"split", (PyCFunction)__pyx_pw_6mathix_5qtree_4Node_3split, METH_NOARGS, __pyx_doc_6mathix_5qtree_4Node_2split},
   {"insert", (PyCFunction)__pyx_pw_6mathix_5qtree_4Node_5insert, METH_O, __pyx_doc_6mathix_5qtree_4Node_4insert},
   {"select", (PyCFunction)__pyx_pw_6mathix_5qtree_4Node_7select, METH_O, __pyx_doc_6mathix_5qtree_4Node_6select},
-  {"print_tree", (PyCFunction)__pyx_pw_6mathix_5qtree_4Node_9print_tree, METH_NOARGS, 0},
+  {"print_tree", (PyCFunction)__pyx_pw_6mathix_5qtree_4Node_9print_tree, METH_NOARGS, __pyx_doc_6mathix_5qtree_4Node_8print_tree},
   {0, 0, 0, 0}
 };
 

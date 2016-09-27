@@ -103,6 +103,9 @@ cdef class Node:
         return self._select(bounds)
 
     def print_tree(self):
+        """
+        Print the tree for debugging purposes.
+        """
         padding = '....' * (self.level - 1)
 
         print('')
