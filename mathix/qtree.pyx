@@ -14,7 +14,7 @@ cdef class Node:
 
         cdef float node_w, node_h, l, b, r, t
 
-        # Check if there are child nodes.
+        # Check if there are no child nodes.
         if self.child1 is None or \
            self.child2 is None or \
            self.child3 is None or \
@@ -41,17 +41,20 @@ cdef class Node:
         if self.level < MAX_LEVEL:
             self._split()
 
-            self.child1._insert(obj)
-            self.child2._insert(obj)
-            self.child3._insert(obj)
-            self.child4._insert(obj)
-        else:
-            self.objects.append(obj)
+            # Try inserting the object to one of its
+            # children, else insert to current node.
+            if self.child1._insert(obj) or \
+               self.child2._insert(obj) or \
+               self.child3._insert(obj) or \
+               self.child4._insert(obj):
+                return True
 
-            # print('')
-            # print('--------------------------------------')
-            # print('insert {} in {}'.format(obj, str(self)))
-            # print('--------------------------------------')
+        self.objects.append(obj)
+
+        # print('')
+        # print('--------------------------------------')
+        # print('insert {} in {}'.format(obj, str(self)))
+        # print('--------------------------------------')
 
         return True
 
